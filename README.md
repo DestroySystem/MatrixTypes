@@ -4,3 +4,4 @@
 3. Threedimensional Matrix
 4. Stepped Matrix
 5. Random Stepped Matrix
+6. Reverse array
