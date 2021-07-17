@@ -161,6 +161,35 @@ namespace Matrix
             }
         }
 
+        static void ReversMatrix()
+        {
+            Console.WriteLine("Reversed Vector:\n");
+            Console.WriteLine("Enter size of array:");
+
+            int size = int.Parse(Console.ReadLine());
+            int[] array = new int[size];
+
+            Random random = new Random();
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = random.Next(100);
+            }
+
+            Console.WriteLine("Normal array:");
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i] + "\t");
+            }
+
+            Console.WriteLine("\nReversed array:");
+            for (int i = array.Length - 1; i >= 0; i--)
+            {
+                Console.Write(array[i] + "\t");
+            }
+
+        }
+
         static void Main(string[] args)
         {
             while (true)
@@ -171,8 +200,9 @@ namespace Matrix
                     "3:Stepped Matrix\n" +
                     "4:Threedimensional Matrix\n" +
                     "5:Random Stepped Matrix\n" +
-                    "6:Clear screen\n" +
-                    "7:Exit");
+                    "6:Reverse Matrix\n" +
+                    "7:Clear screen\n" +
+                    "8:Exit");
 
                 int option = int.Parse(Console.ReadLine());
 
@@ -194,9 +224,12 @@ namespace Matrix
                         RandomSteppedMatrix();
                         break;
                     case 6:
-                        Console.Clear();
+                        ReversMatrix();
                         break;
                     case 7:
+                        Console.Clear();
+                        break;
+                    case 8:
                         Environment.Exit(0);
                         break;
                     default:
